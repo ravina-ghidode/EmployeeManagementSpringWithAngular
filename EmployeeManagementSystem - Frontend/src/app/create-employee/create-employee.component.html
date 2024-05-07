@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="d-flex justify-content-between align-items-center">
+        <h3 class="text-center"> Create Employee </h3>
+        <span class="material-symbols-outlined back-arrow" (click)="goToEmployeeList()">
+            arrow_back
+        </span>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group mb-3">
+            <label> First Name</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName" name="firstName">
+        </div>
+
+        <div class="form-group mb-3">
+            <label> Last Name</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+        </div>
+
+        <div class="form-group mb-3">
+            <label> Email Id</label>
+            <input type="text" class="form-control" id="emailId" [(ngModel)]="employee.emailId" name="emailId">
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-success submit-button" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

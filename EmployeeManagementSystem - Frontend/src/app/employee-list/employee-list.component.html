@@ -1,0 +1,32 @@
+<h2 class="text-center  py-2">Employee List</h2>
+<div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <form class="d-flex mb-3" role="search">
+        <input class="form-control me-2" type="search" [(ngModel)]="serachItem" name="serachItem" placeholder="Search"
+            aria-label="Search"><button class="btn btn-outline-secondary me-2" type="button"
+            (click)="clearSearch()"><span class="material-symbols-outlined">close</span></button>
+        <button class="btn btn-outline-success" type="submit" (click)="searchEmployee()">Search</button>
+    </form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email Id</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td><button type="button" class="btn btn-primary" (click)="updateEmployee(emp.id)">Update</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteEmployee(emp.id)"
+                        style="margin-left: 10px;">Delete</button>
+                    <button type="button" class="btn btn-secondary" (click)="employeeDetail(emp.id)"
+                        style="margin-left: 10px;">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
